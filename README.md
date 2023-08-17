@@ -3,7 +3,7 @@ sistema que gestiona trabajadores camiones y actividades para planificar el reco
 
 credencial ciudadano:
 
-credencial trabajador:
+credencial trabajador:\n
 trabajador / 123456789
 credencial administrador:
 leonidasAD / 123456789
