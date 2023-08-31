@@ -9,3 +9,8 @@ credencial administrador:
 leonidasAD / 123456789
 
 host web(000webhost): https://betrothed-libraries.000webhostapp.com/Views/login.php
+
+
+Integrantes:
+- Suel Arroyo Walter Nick
+- Chavez Calderon de la Barca Leonardo David
