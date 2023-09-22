@@ -20,15 +20,14 @@ class Zona
         $this->objetos = $query->fetchAll();
         return $this->objetos;
     }
-    function crear($nombre, $tipo, $responsable)
+    function crear($nombre, $tipo)
     {
-        $sql = "INSERT INTO zona(nombre,tipo,responsable)
-                VALUES(:nombre,:tipo,:responsable)";
+        $sql = "INSERT INTO zona(nombre,tipo)
+                VALUES(:nombre,:tipo)";
         $query = $this->acceso->prepare($sql);
         $variables = array(
             ':nombre' => $nombre,
-            ':tipo' => $tipo,
-            ':responsable' => $responsable
+            ':tipo' => $tipo
         );
         $query->execute($variables);
     }
@@ -45,15 +44,14 @@ class Zona
         $this->objetos = $query->fetchAll();
         return $this->objetos;
     }
-    function editar($id_zona, $nombre, $tipo, $responsable)
+    function editar($id_zona, $nombre, $tipo)
     {
-        if ($nombre != '' || $tipo != '' || $responsable != '') {
-            $sql = "UPDATE zona SET nombre=:nombre, tipo=:tipo, responsable=:responsable WHERE id=:id_zona";
+        if ($nombre != '' || $tipo != '') {
+            $sql = "UPDATE zona SET nombre=:nombre, tipo=:tipo WHERE id=:id_zona";
             $query = $this->acceso->prepare($sql);
             $variables = array(
                 ':nombre' => $nombre,
                 ':tipo' => $tipo,
-                ':responsable' => $responsable,
                 ':id_zona' => $id_zona
             );
             $query->execute($variables);

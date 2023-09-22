@@ -10,7 +10,7 @@ $(document).ready(function () {
                 let sesion = JSON.parse(response);
                 $('#nav_login').hide();
                 $('#nav_register').hide();
-                $('#usuario_nav').text(sesion.user + '#' + sesion.id);
+                $('#usuario_nav').text(sesion.user);
                 $('#avatar_nav').attr('src', '../Util/Img/Users/' + sesion.avatar);
                 $('#avatar_menu').attr('src', '../Util/Img/Users/' + sesion.avatar);
                 $('#usuario_menu').text(sesion.user);
@@ -41,11 +41,10 @@ $(document).ready(function () {
                     columns: [
                         { data: "nombre" },
                         { data: "tipo" },
-                        { data: "responsable" },
                         {
                             "render": function (data, type, datos, meta) {
-                                return `<button id="${datos.id}" nombre="${datos.nombre}" tipo="${datos.tipo}" responsable="${datos.responsable}" class="edit btn btn-info" title="Editar zona" type="button" data-bs-toggle="modal" data-bs-target="#modal_editar_zona"><i class="fas fa-pencil-alt"></i></button>
-                                    <button id="${datos.id}" nombre="${datos.nombre}" tipo="${datos.tipo}" responsable="${datos.responsable}" class="remove btn btn-danger" title="Eliminar zona" type="button"><i class="fas fa-trash-alt"></i></button>`
+                                return `<button id="${datos.id}" nombre="${datos.nombre}" tipo="${datos.tipo}" class="edit btn btn-info" title="Editar zona" type="button" data-bs-toggle="modal" data-bs-target="#modal_editar_zona"><i class="fas fa-pencil-alt"></i></button>
+                                    <button id="${datos.id}" nombre="${datos.nombre}" tipo="${datos.tipo}" class="remove btn btn-danger" title="Eliminar zona" type="button"><i class="fas fa-trash-alt"></i></button>`
                             }
                         }
                     ],
@@ -118,9 +117,6 @@ $(document).ready(function () {
             },
             tipo: {
                 required: true,
-            },
-            responsable: {
-                required: true,
             }
         },
         messages: {
@@ -128,9 +124,6 @@ $(document).ready(function () {
                 required: "Este campo es obligatorio"
             },
             tipo: {
-                required: "Este campo es obligatorio"
-            },
-            responsable: {
                 required: "Este campo es obligatorio"
             }
         },
@@ -154,10 +147,8 @@ $(document).ready(function () {
         let id = $(elemento).attr('id');
         let nombre = $(elemento).attr('nombre');
         let tipo = $(elemento).attr('tipo');
-        let responsable = $(elemento).attr('responsable');
         $('#nombre_mod').val(nombre);
         $('#tipo_mod').val(tipo);
-        $('#responsable_mod').val(responsable);
         $('#id_zona_mod').val(id);
     });
     async function editar_zona(datos) {
@@ -223,9 +214,6 @@ $(document).ready(function () {
             },
             tipo_mod: {
                 required: true,
-            },
-            responsable_mod: {
-                required: true,
             }
         },
         messages: {
@@ -233,9 +221,6 @@ $(document).ready(function () {
                 required: "Este campo es obligatorio"
             },
             tipo_mod: {
-                required: "Este campo es obligatorio"
-            },
-            responsable_mod: {
                 required: "Este campo es obligatorio"
             }
         },
@@ -284,7 +269,6 @@ $(document).ready(function () {
         let id = $(elemento).attr('id');
         let nombre = $(elemento).attr('nombre');
         let tipo = $(elemento).attr('tipo');
-        let responsable = $(elemento).attr('responsable');
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',

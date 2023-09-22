@@ -23,20 +23,6 @@ class Actividad
     $this->objetos = $query->fetchAll();
     return $this->objetos;
 }
-    /*function crear($hora_inicio, $hora_final, $id_usuario,$id_zona,$id_camion)
-    {
-        $sql = "INSERT INTO actividad(hora_inicio,hora_final,id_usuario,id_zona,id_camion)
-                VALUES(:hora_inicio,:hora_final,:id_usuario,:id_zona,:id_camion)";
-        $query = $this->acceso->prepare($sql);
-        $variables = array(
-            ':hora_inicio' => $hora_inicio,
-            ':hora_final' => $hora_final,
-            ':id_usuario' => $id_usuario,
-            ':id_zona' => $id_zona,
-            ':id_camion' => $id_camion
-        );
-        $query->execute($variables);
-    }*/
     function obtener_actividad($id)
     {
         $sql = "SELECT * 

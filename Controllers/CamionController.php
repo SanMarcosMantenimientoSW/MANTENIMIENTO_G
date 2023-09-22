@@ -52,3 +52,15 @@ if ($_POST['funcion'] == 'llenar_camiones') {
     $jsonstring = json_encode($json);
     echo $jsonstring;
 }
+if ($_POST['funcion'] == 'llenar_camiones_mod') {
+    $camion->llenar_camiones_mod();
+    foreach ($camion->objetos as $objeto) {
+        $json[] = array(
+            'id' => $objeto->id,
+            'placa' => $objeto->placa,
+            'marca' => $objeto->marca
+        );
+    }
+    $jsonstring = json_encode($json);
+    echo $jsonstring;
+}

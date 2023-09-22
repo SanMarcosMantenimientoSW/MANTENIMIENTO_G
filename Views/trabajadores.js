@@ -10,7 +10,7 @@ $(document).ready(function () {
                 let sesion = JSON.parse(response);
                 $('#nav_login').hide();
                 $('#nav_register').hide();
-                $('#usuario_nav').text(sesion.user + '#' + sesion.id);
+                $('#usuario_nav').text(sesion.user);
                 $('#avatar_nav').attr('src', '../Util/Img/Users/' + sesion.avatar);
                 $('#avatar_menu').attr('src', '../Util/Img/Users/' + sesion.avatar);
                 $('#usuario_menu').text(sesion.user);
@@ -176,7 +176,7 @@ $(document).ready(function () {
     async function eliminar_trabajador(id) {
         let funcion = "eliminar_trabajador";
         let respuesta = '';
-        let data = await fetch('../Controllers/TrabajadorController.php', {
+        let data = await fetch('../Controllers/UsuarioController.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: 'funcion=' + funcion + '&&id=' + id
@@ -217,7 +217,7 @@ $(document).ready(function () {
             },
             buttonsStyling: false
         })
-
+        console.log(id);
         swalWithBootstrapButtons.fire({
             title: '¿Deseas eliminar el trabajador ' + nombres + apellidos + '?',
             text: "¡No podras revertir esto!",
@@ -230,6 +230,7 @@ $(document).ready(function () {
             if (result.isConfirmed) {
                 eliminar_trabajador(id).then(respuesta => {
                     if (respuesta.mensaje == 'success') {
+                        console.log("si funciona");
                         swalWithBootstrapButtons.fire(
                             '¡Borrado!',
                             'El trabajador ' + nombres + apellidos + ' fue borrado',

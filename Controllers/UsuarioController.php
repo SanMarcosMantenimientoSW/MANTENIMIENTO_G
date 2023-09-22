@@ -170,6 +170,17 @@ if ($_POST['funcion'] == 'crear_trabajador') {
     $jsonstring = json_encode($json);
     echo $jsonstring;
 }
+if ($_POST['funcion'] == 'eliminar_trabajador') {
+    $formateado = str_replace(" ", "+", $_POST['id']);
+    $id_usuario = openssl_decrypt($formateado, CODE, KEY);
+    $usuario->eliminar_trabajador($id_usuario);
+    $mensaje='success';
+    $json=array(
+        'mensaje'=>$mensaje
+    );
+    $jsonstring=json_encode($json);
+    echo $jsonstring;
+}
 if($_POST['funcion'] == 'tipo_usuario'){
     $tipo_usuario=$_SESSION['tipo_usuario'];
     echo $tipo_usuario;

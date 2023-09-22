@@ -165,7 +165,7 @@ $(document).ready(function () {
                 let sesion = JSON.parse(response);
                 $('#nav_login').hide();
                 $('#nav_register').hide();
-                $('#usuario_nav').text(sesion.user + '#' + sesion.id);
+                $('#usuario_nav').text(sesion.user);
                 $('#avatar_nav').attr('src', '../Util/Img/Users/' + sesion.avatar);
                 $('#avatar_menu').attr('src', '../Util/Img/Users/' + sesion.avatar);
                 $('#usuario_menu').text(sesion.user);
@@ -221,102 +221,6 @@ $(document).ready(function () {
             })
         }
     }
-    /*async function crear_actividad(datos) {
-        let data = await fetch('../Controllers/ActividadController.php', {
-            method: 'POST',
-            body: datos
-        })
-        if (data.ok) {
-            let response = await data.text();
-            try {
-                let respuesta = JSON.parse(response);
-                if (respuesta.mensaje == 'listo') {
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'Se ha creado la actividad',
-                        showConfirmButton: false,
-                        timer: 1500
-                    }).then(function () {
-                        read_all_actividades();
-                        $('#form-actividad').trigger('reset');
-                    })
-                }
-
-            } catch (error) {
-                console.error(error);
-                console.log(response);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'No se pudo crear la actividad, comuniquese con el area de soporte',
-                })
-            }
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Hubo conflicto al editar sus datos, comuniquese con el area de soporte',
-            })
-        }
-    }
-    $.validator.setDefaults({
-        submitHandler: function () {
-            let funcion = "crear_actividad";
-            let datos = new FormData($('#form-actividad')[0]);
-            datos.append("funcion", funcion);
-            crear_actividad(datos);
-        }
-    });
-    $('#form-actividad').validate({
-        rules: {
-            hora_inicio: {
-                required: true,
-            },
-            hora_final: {
-                required: true,
-            },
-            id_usuario: {
-                required: true,
-            },
-            id_zona: {
-                required: true,
-            },
-            id_camion: {
-                required: true,
-            }
-        },
-        messages: {
-            hora_inicio: {
-                required: "Este campo es obligatorio"
-            },
-            hora_final: {
-                required: "Este campo es obligatorio"
-            },
-            id_usuario: {
-                required: "Este campo es obligatorio"
-            },
-            id_zona: {
-                required: "Este campo es obligatorio"
-            },
-            id_camion: {
-                required: "Este campo es obligatorio"
-            }
-        },
-        errorElement: 'span',
-        errorPlacement: function (error, element) {
-            error.addClass('invalid-feedback');
-            element.closest('.form-group').append(error);
-        },
-        highlight: function (element, errorClass, validClass) {
-            $(element).addClass('is-invalid');
-            $(element).removeClass('is-valid');
-        },
-        unhighlight: function (element, errorClass, validClass) {
-            $(element).removeClass('is-invalid');
-            $(element).addClass('is-valid');
-        }
-    });*/
     $(document).on('click', '.edit', (e) => {
         $('#form-actividad-mod').trigger('reset');
         let elemento = $(this)[0].activeElement;

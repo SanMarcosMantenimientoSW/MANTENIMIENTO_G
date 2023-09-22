@@ -12,14 +12,7 @@ if ($_POST['funcion'] == 'read_all_zonas') {
             'id' => openssl_encrypt($objeto->id, CODE, KEY),
             'nombre' => $objeto->nombre,
             'tipo' => $objeto->tipo,
-            'dias_recojo' => $objeto->dias_recojo,
-            'horaro_recojo' => $objeto->horario_recojo,
-            'responsable' => $objeto->responsable,
             'estado' => $objeto->estado,
-            'mapa' => $objeto->mapa,
-            'imagen' => $objeto->imagen,
-            'descripcion' => $objeto->descripcion,
-            'comentarios' => $objeto->comentarios
         );
     }
     $jsonstring = json_encode($json);
@@ -28,8 +21,7 @@ if ($_POST['funcion'] == 'read_all_zonas') {
 if ($_POST['funcion'] == 'crear_zona') {
     $nombre = $_POST['nombre'];
     $tipo = $_POST['tipo'];
-    $responsable = $_POST['responsable'];
-    $zona->crear($nombre, $tipo, $responsable);
+    $zona->crear($nombre, $tipo);
     $json = array(
         'mensaje' => 'listo'
     );
@@ -41,21 +33,17 @@ if ($_POST['funcion'] == 'editar_zona') {
     $id_zona = openssl_decrypt($formateado, CODE, KEY);
     $nombre = $_POST['nombre_mod'];
     $tipo = $_POST['tipo_mod'];
-    $responsable = $_POST['responsable_mod'];
     $mensaje = '';
     $datos_cambiados = 'Ha hecho los siguientes cambios';
     $zona->obtener_zona($id_zona);
-    if ($nombre != $zona->objetos[0]->nombre || $tipo != $zona->objetos[0]->tipo || $responsable != $zona->objetos[0]->responsable) {
+    if ($nombre != $zona->objetos[0]->nombre || $tipo != $zona->objetos[0]->tipo) {
         if ($nombre != $zona->objetos[0]->nombre) {
             $datos_cambiados .= 'Una zona cambio su nombre de ' . $zona->objetos[0]->nombre . ' a ' . $nombre . ', ';
         }
         if ($tipo != $zona->objetos[0]->tipo) {
             $datos_cambiados .= 'Una zona cambio su tipo de ' . $zona->objetos[0]->tipo . ' a ' . $tipo . ', ';
         }
-        if ($responsable != $zona->objetos[0]->responsable) {
-            $datos_cambiados .= 'Una zona cambio su responsable de ' . $zona->objetos[0]->responsable . ' a ' . $responsable . ', ';
-        }
-        $zona->editar($id_zona, $nombre, $tipo, $responsable);
+        $zona->editar($id_zona, $nombre, $tipo);
         $mensaje = 'success';
     } else {
         $mensaje = 'danger';
@@ -85,8 +73,6 @@ if ($_POST['funcion'] == 'llenar_zonas') {
             'id' => $objeto->id,
             'nombre' => $objeto->nombre,
             'tipo' => $objeto->tipo,
-            'responsable' => $objeto->responsable,
-            'imagen' => $objeto->imagen,
         );
     }
     $jsonstring = json_encode($json);
@@ -99,8 +85,6 @@ if ($_POST['funcion'] == 'llenar_zonas_mod') {
             'id' => $objeto->id,
             'nombre' => $objeto->nombre,
             'tipo' => $objeto->tipo,
-            'responsable' => $objeto->responsable,
-            'imagen' => $objeto->imagen,
         );
     }
     $jsonstring = json_encode($json);
