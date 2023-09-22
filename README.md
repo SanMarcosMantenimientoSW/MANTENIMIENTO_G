@@ -14,4 +14,6 @@ host web(000webhost): https://betrothed-libraries.000webhostapp.com/Views/login.
 Integrantes:
 - Suel Arroyo Walter Nick
 - Chavez Calderon de la Barca Leonardo David
-- ...
+- Quispe Cadillo, Andres
+- Álvarez Lévano, Jose
+
