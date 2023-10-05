@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../Util/Css/sweetalert2.min.css">
   <link rel="stylesheet" href="../Util/Css/toastr.min.css">
   <link rel="stylesheet" href="../Util/Css/datatables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.css">
 </head>
 
 <body class="hold-transition sidebar-mini">

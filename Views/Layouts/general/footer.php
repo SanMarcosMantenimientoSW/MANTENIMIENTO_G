@@ -32,6 +32,7 @@
 <script src="../Util/Js/bs-custom-file-input.min.js"></script>
 <script src="../Util/Js/toastr.min.js"></script>
 <script src="../Util/Js/datatables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.js"></script>
 </body>
 <script>
     funcion = 'tipo_usuario';
