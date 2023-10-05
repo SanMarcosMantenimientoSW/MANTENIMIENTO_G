@@ -210,7 +210,7 @@ $(document).ready(function () {
                         { data: "motivo" },
                         {
                             "render":function(data,type,datos,meta){
-                                return `<a href="../Util/Img/solicitudes/${datos.archivo}" target="_blank">Imagen puta referencial</a>`
+                                return `<a href="../Util/Img/solicitudes/${datos.archivo}" target="_blank">Imagen ruta referencial</a>`
                             }
                         },
                         {
