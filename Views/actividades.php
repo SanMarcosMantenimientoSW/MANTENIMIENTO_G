@@ -103,22 +103,25 @@ include_once 'Layouts/general/header.php';
 <section class="content">
   <div class="card">
     <div class="card-body">
-      <table id="actividad" class="table table-hover">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Hora de Inicio</th>
-            <th>Hora final</th>
-            <th>Trabajador</th>
-            <th>Zona</th>
-            <th>Camion</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div class="table-responsive">
+        <table id="actividad" class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th class="hidden-mobile">ID</th>
+              <th>Hora de Inicio</th>
+              <th>Hora final</th>
+              <th class="hidden-mobile">Trabajador</th>
+              <th class="hidden-mobile">Zona</th>
+              <th class="hidden-mobile">Camion</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
 
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
+      
     </div>
     <div class="card-footer">
       Footer
