@@ -85,12 +85,21 @@ include_once 'Layouts/general/header.php';
             <table id="estado_solicitud" class="table table-hover table-responsive">
                   <thead>
                       <tr>
+<<<<<<< HEAD
                           <th>Usuario</th>
                           <th>Zona</th>
                           <th>Motivo</th>
                           <th>Archivo</th>
                           <th>Acciones</th>
                           <th>Estado</th>
+=======
+                          <th class="hidden-mobile">Usuario</th>
+                          <th class="hidden-mobile">Zona</th>
+                          <th class="hidden-mobile">Motivo</th>
+                          <th class="hidden-mobile">Archivo</th>
+                          <th class="hidden-mobile">Acciones</th>
+                          <th class="hidden-mobile">Estado</th>
+>>>>>>> 4deaef67ffe97a5f733e953228c58ce13c474486
                       </tr>
                   </thead>
                   <tbody>
