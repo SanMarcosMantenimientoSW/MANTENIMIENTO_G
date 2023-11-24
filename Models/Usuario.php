@@ -116,6 +116,16 @@ class Usuario
         );
         $query->execute($variables);
     }
+    function eliminar_trabajador($id_usuario)
+    {
+        $sql = "UPDATE usuario SET estado=:estado WHERE id=:id_usuario";
+        $query = $this->acceso->prepare($sql);
+        $variables = array(
+            ':id_usuario' => $id_usuario,
+            ':estado'=>'I'
+        );
+        $query->execute($variables);
+    }
     function llenar_usuarios()
     {
         $sql = "SELECT * 

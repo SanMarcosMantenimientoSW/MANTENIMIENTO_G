@@ -48,7 +48,7 @@ include_once 'Layouts/general/header.php';
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
                     <li class="breadcrumb-item active">Estado solicitudes</li>
                 </ol>
             </div>
@@ -81,21 +81,24 @@ include_once 'Layouts/general/header.php';
             </div>
         </section>
         <div class="card-body">
-            <table id="estado_solicitud" class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Usuario</th>
-                        <th>Zona</th>
-                        <th>Motivo</th>
-                        <th>Archivo</th>
-                        <th>Acciones</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
+          <div class="table-responsive">
+            <table id="estado_solicitud" class="table table-hover table-responsive">
+                  <thead>
+                      <tr>
+                          <th>Usuario</th>
+                          <th>Zona</th>
+                          <th>Motivo</th>
+                          <th>Archivo</th>
+                          <th>Acciones</th>
+                          <th>Estado</th>
+                      </tr>
+                  </thead>
+                  <tbody>
 
-                </tbody>
-            </table>
+                  </tbody>
+              </table>
+          </div>
+            
         </div>
         <div class="card-footer">
             Footer
@@ -108,3 +111,4 @@ include_once 'Layouts/general/header.php';
 include_once 'Layouts/general/footer.php';
 ?>
 <script src="Estado_solicitudes.js"></script>
+

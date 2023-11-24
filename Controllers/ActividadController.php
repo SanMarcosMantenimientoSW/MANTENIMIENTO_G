@@ -21,19 +21,6 @@ if ($_POST['funcion'] == 'read_all_actividades') {
     $jsonstring = json_encode($json);
     echo $jsonstring;
 }
-/*if ($_POST['funcion'] == 'crear_actividad') {
-    $hora_inicio = $_POST['hora_inicio'];
-    $hora_final = $_POST['hora_final'];
-    $id_usuario = $_POST['id_usuario'];
-    $id_zona = $_POST['id_zona'];
-    $id_camion = $_POST['id_camion'];
-    $actividad->crear($hora_inicio, $hora_final, $id_usuario, $id_zona, $id_camion);
-    $json = array(
-        'mensaje' => 'listo'
-    );
-    $jsonstring = json_encode($json);
-    echo $jsonstring;
-}*/
 if ($_POST['funcion'] == 'editar_actividad') {
     $id_actividad = $_POST['id_actividad_mod'];
     $hora_inicio = $_POST['hora_inicio_mod'];

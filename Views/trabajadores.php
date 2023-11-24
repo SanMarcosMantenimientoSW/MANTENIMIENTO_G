@@ -61,7 +61,7 @@ include_once 'Layouts/general/header.php';
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
                     <li class="breadcrumb-item active">Trabajador</li>
                 </ol>
             </div>
@@ -72,36 +72,26 @@ include_once 'Layouts/general/header.php';
 <section class="content">
     <div class="card">
         <div class="card-body">
-            <table id="trabajador" class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Usuario</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>DNI</th>
-                        <th>Email</th>
-                        <th>Telefono</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>
-        <div class="card-footer">
-            Footer
+            <div class="table-responsive">
+                <table id="trabajador" class="table table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th class="hidden-mobile">Nombres</th>
+                            <th class="hidden-mobile">Apellidos</th>
+                            <th class="hidden-mobile">DNI</th>
+                            <th>Email</th>
+                            <th class="hidden-mobile">Telefono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            
         </div>
     </div>
-
-
-
-
-
-
-
-
-
 </section>
 <script src="https://unpkg.com/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
 <?php

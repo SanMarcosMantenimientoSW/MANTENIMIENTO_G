@@ -63,4 +63,13 @@ class Camion
         $this->objetos = $query->fetchAll();
         return $this->objetos;
     }
+    function llenar_camiones_mod()
+    {
+        $sql = "SELECT * 
+                FROM camion";
+        $query = $this->acceso->prepare($sql);
+        $query->execute();
+        $this->objetos = $query->fetchAll();
+        return $this->objetos;
+    }
 }

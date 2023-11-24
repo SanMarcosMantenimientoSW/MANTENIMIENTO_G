@@ -18,10 +18,6 @@ include_once 'Layouts/general/header.php';
             <label for="tipo">Tipo de zona</label>
             <input type="text" name="tipo" class="form-control" id="tipo" placeholder="Ingrese el tipo de zona">
           </div>
-          <div class="form-group">
-            <label for="responsable">Responsable</label>
-            <input type="text" name="responsable" class="form-control" id="responsable" placeholder="Ingrese el responsable de la zona">
-          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -49,10 +45,6 @@ include_once 'Layouts/general/header.php';
             <label for="tipo_mod">Tipo de zona</label>
             <input type="text" name="tipo_mod" class="form-control" id="tipo_mod" placeholder="Ingrese el tipo de zona">
           </div>
-          <div class="form-group">
-            <label for="responsable_mod">Responsable</label>
-            <input type="text" name="responsable_mod" class="form-control" id="responsable_mod" placeholder="Ingrese el responsable de la zona">
-          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -76,7 +68,7 @@ include_once 'Layouts/general/header.php';
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
           <li class="breadcrumb-item active">Zonas</li>
         </ol>
       </div>
@@ -92,7 +84,6 @@ include_once 'Layouts/general/header.php';
           <tr>
             <th>Nombre</th>
             <th>Tipo</th>
-            <th>Responsable</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -101,19 +92,7 @@ include_once 'Layouts/general/header.php';
         </tbody>
       </table>
     </div>
-    <div class="card-footer">
-      Footer
-    </div>
   </div>
-
-
-
-
-
-
-
-
-
 </section>
 <script src="https://unpkg.com/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
 <?php

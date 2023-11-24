@@ -51,13 +51,7 @@
                         </button>
                     </div>
                 </form>
-
-
                 <!-- /.social-auth-links -->
-
-                <p class="mb-1">
-                    <a href="">He olvidado mi contraseña</a>
-                </p>
                 <p class="mb-0">
                     <a href="register.php" class="text-center">Registrarse</a>
                 </p>
